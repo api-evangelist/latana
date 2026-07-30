@@ -1,19 +1,53 @@
 aid: latana
-name: latana
-description: latana is a company surfaced as a portfolio company of balderton-capital and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+name: Latana
+description: >-
+  Latana is a Berlin-based brand tracking and consumer-insights platform that measures brand
+  awareness, brand perception, purchase consideration and ad awareness for global consumer
+  brands. Rather than buying responses from incentivized survey panels, Latana collects
+  non-incentivized micro-surveys through advertising placements to reach everyday consumers,
+  then applies Bayesian modelling and machine-learning quality assurance to project the
+  sample onto real-world populations, including small and hard-to-reach markets. The product
+  is delivered as a dashboard covering brand health tracking, competitor benchmarking,
+  purchase funnel tracking and brand strategy planning, sold per market per year across
+  Essential, Pro and Custom tiers. Customers include Unilever, Amazon, IKEA, Uber, PVH and
+  Emma Sleep. Latana is backed by Balderton Capital. As of July 2026 Latana publishes no
+  public API, developer portal, SDKs or machine-readable API description; delivery is through
+  the app.latana.com dashboard, dashboard data export and a Latana Slack app.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/6475c5eea8e20ed4cd6ee36e/647d9733ae633cba5002ee6b_Favicon.png
 url: https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - balderton-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: no-public-api
+x-tier-reason: >-
+  Enriched 2026-07-19. Probed the full developer surface: no api./docs./developer./status./
+  trust. subdomains resolve, no /.well-known/ documents, no /llms.txt, no public OpenAPI,
+  SDK, CLI or Postman collection. Enterprise SaaS delivered via dashboard only.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Brand Tracking
+- Market Research
+- Consumer Insights
+- Brand Awareness
+- Marketing Analytics
+- Survey Data
+- Advertising
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +56,35 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://latana.com/
+  url: https://www.latana.com/
+- type: Pricing
+  url: https://www.latana.com/pricing
+- type: Login
+  url: https://app.latana.com/login
+- type: Blog
+  url: https://www.latana.com/resources
+- type: TermsOfService
+  url: https://www.latana.com/legal-terms/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.latana.com/legal-terms/privacy-policy
+- type: Impressum
+  url: https://www.latana.com/legal-terms/impressum
+- type: About
+  url: https://www.latana.com/about-us
+- type: Team
+  url: https://www.latana.com/our-team
+- type: Careers
+  url: https://www.latana.com/careers
+- type: PressRoom
+  url: https://www.latana.com/press-room
+- type: CaseStudies
+  url: https://www.latana.com/case-studies
+- type: DomainSecurity
+  url: security/latana-domain-security.yml
+- type: LLMsTxt
+  url: llms/latana-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
