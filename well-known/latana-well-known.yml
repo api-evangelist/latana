@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: probed
+source: live HTTP probes of the latana.com host
+host: https://www.latana.com
+notes: >-
+  No /.well-known/ discovery documents are published. Latana operates no public
+  API host (api.latana.com, docs.latana.com and developer.latana.com do not
+  resolve), so the only probeable host is the marketing site. Recorded as a
+  negative result so re-runs do not re-probe; no WellKnown pointer is wired in
+  apis.yml because nothing was found.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /llms.txt
+  status: 404
+hosts_checked:
+- host: www.latana.com
+  status: 200
+- host: latana.com
+  status: 200
+- host: app.latana.com
+  status: 200
+- host: api.latana.com
+  status: 0
+  note: does not resolve
+- host: docs.latana.com
+  status: 0
+  note: does not resolve
+- host: developer.latana.com
+  status: 0
+  note: does not resolve
+- host: status.latana.com
+  status: 0
+  note: does not resolve
+- host: trust.latana.com
+  status: 0
+  note: does not resolve

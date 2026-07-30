@@ -1,0 +1,52 @@
+# Latana
+
+> Latana is a Berlin-based brand tracking and consumer-insights platform. It measures brand
+> awareness, perception, consideration and ad awareness by collecting non-incentivized
+> micro-surveys through advertising placements rather than incentivized survey panels, then
+> applying Bayesian modelling and machine-learning quality assurance to project results onto
+> real-world populations. Customers include Unilever, Amazon, IKEA, Uber, PVH and Emma Sleep.
+> Latana is backed by Balderton Capital.
+
+## Status
+
+- No public API. Latana publishes no developer portal, API reference, OpenAPI description,
+  SDKs, CLI or public API host as of 2026-07-19. Delivery is through the Latana dashboard at
+  app.latana.com plus dashboard data export; a Latana Slack app is the only announced
+  programmatic surface.
+
+## Product
+
+- [How it works — data collection](https://www.latana.com/how-it-works/data-collection-methods): Ad-based, non-incentivized sampling.
+- [How it works — data processing](https://www.latana.com/how-it-works/data-processing): Quality assurance and modelling of collected responses.
+- [How it works — data interpretation](https://www.latana.com/how-it-works/data-interpretation): Turning modelled results into brand insights.
+- [Ad awareness tracking](https://www.latana.com/solutions/ad-awareness-tracking)
+- [Brand health tracking](https://www.latana.com/solutions/brand-health-tracking)
+- [Competitor benchmarking](https://www.latana.com/solutions/competitor-benchmarking)
+- [Purchase funnel tracking](https://www.latana.com/solutions/purchase-funnel)
+- [Brand strategy and planning](https://www.latana.com/solutions/brand-strategy-and-planning)
+
+## Access
+
+- [Log in](https://app.latana.com/login): The Latana dashboard.
+- [Pricing](https://www.latana.com/pricing): Essential, Pro and Custom tiers priced per market per year.
+
+## Resources
+
+- [Articles](https://www.latana.com/resources): Research and brand-tracking articles.
+- [Case studies](https://www.latana.com/case-studies)
+- [Guides](https://www.latana.com/guides/5-ways-to-improve-data-quality-in-brand-tracking)
+- [Press room](https://www.latana.com/press-room)
+
+## Company
+
+- [About Latana](https://www.latana.com/about-us)
+- [Our team](https://www.latana.com/our-team)
+- [Careers](https://www.latana.com/careers)
+- [Terms and conditions](https://www.latana.com/legal-terms/terms-and-conditions)
+- [Privacy policy](https://www.latana.com/legal-terms/privacy-policy)
+- [Impressum](https://www.latana.com/legal-terms/impressum)
+
+## API Evangelist
+
+- [APIs.json](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/apis.yml): This provider's machine-readable index.
+- [Domain security probe](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/security/latana-domain-security.yml)
