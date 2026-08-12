@@ -1,0 +1,78 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.latana.com/pricing
+notes: >-
+  Latana publishes real, named, numerically-priced tiers on its public pricing page — unusual
+  for enterprise brand-tracking software, and the reason this artifact is `searched` rather
+  than a "contact us" zero. Pricing is per MARKET per YEAR, not per seat: users are unlimited
+  on every tier and the billable unit is the country/market being tracked. There is no API,
+  call-volume or data-export component to any tier — the quota unit is interviews collected
+  per brand per market per year. Contract minimum is 12 months; trial access is offered
+  without an annual commitment.
+currency: EUR
+billing_period: year
+billing_unit: per market per year
+contract_minimum_months: 12
+plan_count: 3
+plans:
+- name: Essential
+  price: 7900
+  currency: EUR
+  billing_period: year
+  billing_unit: per market per year
+  included:
+    brands: 4
+    custom_segments: 2
+    markets_available: 150+
+    interviews: Up to 25,000 per brand per market per year
+    update_frequency: monthly
+    users: unlimited
+  features:
+  - Dashboard access
+  - Segmentation with margin-of-error visibility
+  - Dedicated support
+  overage: >-
+    No published overage rate. Additional modules, brands or segmentations are sold as add-ons
+    at a price not published on the page.
+- name: Pro
+  price: 18900
+  currency: EUR
+  billing_period: year
+  billing_unit: per market per year
+  included:
+    brands: 6
+    custom_segments: 3
+    markets_available: 150+
+    interviews: Up to 50,000 per brand per market per year
+    update_frequency: monthly with deep segmentation
+    users: unlimited
+  features:
+  - Funnel metrics
+  - Trend-line models
+  - KPI predictions
+  - Dedicated research team support
+  overage: >-
+    No published overage rate. Additional modules, brands or segmentations are sold as add-ons
+    at a price not published on the page.
+- name: Custom
+  price: null
+  price_note: Upon request
+  currency: EUR
+  billing_period: year
+  billing_unit: per market per year
+  included:
+    brands: Up to 50
+    custom_segments: Up to 10
+    markets_available: 150+ countries, territories, cities and regions
+    interviews: Up to 100,000 per market per year
+    users: unlimited
+  features:
+  - Flexible KPI additions
+  - Dedicated research and data-science support
+  overage: Negotiated; not published.
+api_access:
+  included_in_any_tier: false
+  note: >-
+    No tier lists API access, data-export volume, webhook delivery or developer entitlements.
+    The Latana Slack app is provisioned by the Customer Success team on request
+    (cs@latana.com) rather than being attached to a tier.

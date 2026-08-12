@@ -1,13 +1,19 @@
-generated: '2026-07-19'
+generated: '2026-08-12'
 method: probed
-source: live HTTP probes of the latana.com host
+source: live HTTP probes of every Latana-operated host known as of 2026-08-12
 host: https://www.latana.com
 notes: >-
-  No /.well-known/ discovery documents are published. Latana operates no public
-  API host (api.latana.com, docs.latana.com and developer.latana.com do not
-  resolve), so the only probeable host is the marketing site. Recorded as a
-  negative result so re-runs do not re-probe; no WellKnown pointer is wired in
-  apis.yml because nothing was found.
+  Re-probed 2026-08-12 against a wider host set than the 2026-07-19 round. Three additional
+  Latana-operated hosts were recovered from the REACT_APP_* configuration block in the
+  app.latana.com JavaScript bundle (back.latana.com, llmagent.latana.com) and from search
+  (resources.latana.com). No /.well-known/ discovery document is served on ANY of them, and
+  no /llms.txt exists on any host. NO WellKnown, SecurityTxt or AgentCard pointer is wired in
+  apis.yml because nothing was found — this file records a verified absence, not a presence.
+  IMPORTANT FALSE-POSITIVE GUARD: app.latana.com is a single-page application whose catch-all
+  answers HTTP 200 with the identical 80,361-byte HTML shell for EVERY path probed, including
+  /.well-known/agent-card.json, /.well-known/agent.json, /openapi.json and /llms.txt. Those
+  200s are the SPA shell, not documents, and are recorded below as misses. resources.latana.com
+  behaves the same way in reverse, answering a 76,534-byte HTML 404 body.
 documents:
 - path: /.well-known/security.txt
   status: 404
@@ -15,19 +21,57 @@ documents:
   status: 404
 - path: /.well-known/oauth-authorization-server
   status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
 - path: /.well-known/api-catalog
   status: 404
 - path: /.well-known/ai-plugin.json
   status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
 - path: /llms.txt
   status: 404
+- path: /openapi.json
+  status: 404
+- path: /robots.txt
+  status: 200
+  note: Served, but a crawl directive rather than a discovery document; disallows /private-api/.
+- path: /sitemap.xml
+  status: 200
+  note: 59 URLs, all marketing/editorial. No developer, API or documentation page among them.
 hosts_checked:
 - host: www.latana.com
   status: 200
+  well_known: none
 - host: latana.com
   status: 200
+  well_known: none
 - host: app.latana.com
   status: 200
+  well_known: none
+  note: >-
+    SPA catch-all returns 200 + identical HTML for every /.well-known/* and /openapi.* path.
+    Treated as a miss, not a hit.
+- host: back.latana.com
+  status: 404
+  well_known: none
+  note: >-
+    Rails API backend. Every /.well-known/* path returns a genuine 404 (0-byte text/plain).
+    /api-docs returns 401 with WWW-Authenticate:: Basic realm="". /mcp answers a JSON-RPC 2.0
+    envelope {"error":{"code":-32601,"message":"Endpoint not found"}} to both GET and a
+    tools/list POST, so it is a generic JSON-RPC router and NOT an MCP server.
+- host: llmagent.latana.com
+  status: 200
+  well_known: none
+  note: '"Data Assistant Streaming Server"; /health 200, all /.well-known/* and spec paths 404.'
+- host: resources.latana.com
+  status: 200
+  well_known: none
+- host: help.latana.com
+  status: 404
+  note: Resolves to 3.168.102.88 but the root returns 404; no help centre is served.
 - host: api.latana.com
   status: 0
   note: does not resolve
@@ -37,9 +81,18 @@ hosts_checked:
 - host: developer.latana.com
   status: 0
   note: does not resolve
+- host: developers.latana.com
+  status: 0
+  note: does not resolve
 - host: status.latana.com
   status: 0
   note: does not resolve
 - host: trust.latana.com
+  status: 0
+  note: does not resolve
+- host: security.latana.com
+  status: 0
+  note: does not resolve
+- host: mcp.latana.com
   status: 0
   note: does not resolve

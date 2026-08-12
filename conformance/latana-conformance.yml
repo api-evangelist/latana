@@ -1,0 +1,49 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.latana.com/legal-terms/privacy-policy
+notes: >-
+  Latana publishes NO named security certification. /security, /trust and /compliance all
+  return 404, trust.latana.com and security.latana.com do not resolve, and the privacy policy
+  names no ISO 27001, SOC 2, TISAX, CSA STAR or PCI programme. The only compliance framework
+  Latana asserts is GDPR, which it invokes repeatedly by article in its privacy policy as the
+  legal basis for processing — appropriate for a Berlin GmbH whose product is survey data
+  about EU consumers, but a statutory obligation rather than an audited certification.
+  Because no certification programme is published, NO `Compliance` pointer is wired in
+  apis.yml: emitting one here would credit Latana with an audited posture it does not claim.
+  Every API-shaped standard below is `false` for the same underlying reason — Latana publishes
+  no machine-readable contract to conform to.
+standards:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    Privacy policy cites GDPR articles directly as the legal basis for processing (e.g.
+    "Art. 6(1) (a) GDPR"); a named data protection officer is published at dpo@latana.com and
+    the controller is registered as Latana GmbH, Lobeckstrasse 30/35, 10969 Berlin.
+- id: iso-27001
+  conforms: false
+  evidence: Not claimed anywhere on the public surface; no trust centre is served.
+- id: soc2
+  conforms: false
+  evidence: Not claimed anywhere on the public surface; no trust centre is served.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No Latana-issued OAuth server. The Latana Slack app requests SLACK OAuth scopes
+    (app_mentions:read, channels:history, chat:write, im:history, im:read, users:read) — that
+    is Slack's authorization server, not Latana's, and is not a Latana conformance claim.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on every Latana host.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI or error reference published.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every Latana host.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No deprecation or versioning policy published.
+compliance_contacts:
+- role: Data Protection Officer
+  email: dpo@latana.com
+  source: https://www.latana.com/legal-terms/privacy-policy

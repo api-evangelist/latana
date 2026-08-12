@@ -9,10 +9,28 @@
 
 ## Status
 
-- No public API. Latana publishes no developer portal, API reference, OpenAPI description,
-  SDKs, CLI or public API host as of 2026-07-19. Delivery is through the Latana dashboard at
-  app.latana.com plus dashboard data export; a Latana Slack app is the only announced
-  programmatic surface.
+- No public API. As of 2026-08-12 Latana publishes no developer portal, API reference,
+  OpenAPI description, AsyncAPI, GraphQL schema, MCP server, agent card, `llms.txt`,
+  `/.well-known/` document, SDK, CLI or public Postman collection. There is no developer or
+  API page anywhere in the 59-URL sitemap, and `api.`, `docs.`, `developer.`, `status.` and
+  `trust.` subdomains do not resolve.
+- An API exists but is not published. `back.latana.com` is a Rails backend serving the
+  `app.latana.com` dashboard over `/api/v2/*` and `/api/v3/*`. Its reference endpoint,
+  `https://back.latana.com/api-docs`, returns HTTP 401 with `WWW-Authenticate: Basic` — the
+  contract is written down, it is simply not readable without credentials. API Evangelist
+  does not reconstruct or publish contracts from a vendor's private application traffic, so
+  no OpenAPI is recorded for Latana. `back.latana.com/mcp` answers a JSON-RPC 2.0
+  `-32601 Endpoint not found` envelope to `tools/list`; it is a generic JSON-RPC router, not
+  an MCP server.
+- Latana runs an LLM agent surface. `llmagent.latana.com` identifies itself as the "Data
+  Assistant Streaming Server" and backs the in-product data assistant and the Latana Slack
+  bot. It publishes no tool manifest, agent card or schema.
+- The Latana Slack app is the only announced programmatic surface. It is provisioned by the
+  Customer Success team on request (cs@latana.com) rather than self-serve, and authorises
+  through Slack's OAuth with the scopes `app_mentions:read`, `channels:history`,
+  `chat:write`, `im:history`, `im:read`, `users:read`. Those are Slack's scopes, not
+  Latana-issued ones.
+- Delivery is otherwise through the dashboard at app.latana.com plus CSV export.
 
 ## Product
 
@@ -28,7 +46,12 @@
 ## Access
 
 - [Log in](https://app.latana.com/login): The Latana dashboard.
-- [Pricing](https://www.latana.com/pricing): Essential, Pro and Custom tiers priced per market per year.
+- [Pricing](https://www.latana.com/pricing): Priced per market per year, users unlimited —
+  Essential EUR 7,900 (4 brands, 2 segments, up to 25k interviews/brand/market/year), Pro
+  EUR 18,900 (6 brands, 3 segments, up to 50k interviews), Custom on request (up to 50
+  brands, 10 segments, up to 100k interviews/market/year). 12-month contract minimum.
+- [Book a demo](https://resources.latana.com/book-demo/): The only self-serve intake path.
+- Slack app access: cs@latana.com (Customer Success provisions it).
 
 ## Resources
 
@@ -50,3 +73,8 @@
 
 - [APIs.json](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/apis.yml): This provider's machine-readable index.
 - [Domain security probe](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/security/latana-domain-security.yml)
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/well-known/latana-well-known.yml): Verified absence across every Latana host.
+- [Plans and pricing](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/plans/latana-plans-pricing.yml)
+- [Rate limits](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/rate-limits/latana-rate-limits.yml): Verified zero — no public API to limit.
+- [Packages](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/packages/latana-packages.yml): No first-party SDK in any registry.
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/latana/refs/heads/main/conformance/latana-conformance.yml): GDPR asserted; no named certification published.

@@ -1,0 +1,41 @@
+generated: '2026-08-12'
+method: searched
+source: registry queries against npm, PyPI, RubyGems, crates.io and the GitHub organisation API
+package_count: 0
+notes: >-
+  No first-party Latana client library exists in any public package registry. Checked
+  2026-08-12 by querying each registry's unauthenticated metadata endpoint directly; every
+  one is a verified miss, not an unchecked gap. Latana also operates no public GitHub
+  organisation (api.github.com/orgs/latana -> 404), so there is no source-code surface from
+  which an unpublished SDK could be derived either. This is consistent with the rest of the
+  profile: Latana ships no public API, so there is nothing for an SDK to wrap.
+packages: []
+registries_checked:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=latana
+  status: 200
+  matches: 0
+- registry: pypi
+  endpoint: https://pypi.org/pypi/latana/json
+  status: 404
+  matches: 0
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/gems/latana.json
+  status: 404
+  matches: 0
+- registry: crates.io
+  endpoint: https://crates.io/api/v1/crates/latana
+  status: 403
+  matches: 0
+  note: crates.io refused the unauthenticated request; no Rust crate is expected for this provider.
+- registry: github
+  endpoint: https://api.github.com/orgs/latana
+  status: 404
+  matches: 0
+  note: No public GitHub organisation under this name.
+postman:
+  status: no-public-collection
+  note: >-
+    A Postman team named "Latana's Team" (handle latanas-team, created 2026-07-30) exists in
+    the public Postman search index, but it reports 0 collections, 0 workspaces and 0 APIs.
+    Nothing is published, so no `Postman` pointer is wired in apis.yml.

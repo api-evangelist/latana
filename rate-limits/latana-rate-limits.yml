@@ -1,0 +1,31 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.latana.com/pricing
+limit_count: 0
+notes: >-
+  Latana publishes no API rate limits, because it publishes no public API. The full marketing
+  surface was searched on 2026-08-12 — the 59-URL sitemap contains no developer, API or
+  documentation page, and /developers, /api and /integrations all return 404. The only
+  Latana-operated API host, back.latana.com, gates its reference behind HTTP Basic
+  (/api-docs -> 401), so no rate-limit headers, windows or exhaustion status codes could be
+  read from documentation or observed on an unauthenticated response. This is a verified zero,
+  not an unchecked one.
+limits: []
+response_headers:
+  observed: []
+  note: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header was observed on any unauthenticated
+    response from www.latana.com, app.latana.com, back.latana.com or llmagent.latana.com.
+exhaustion_status: null
+quota_model:
+  note: >-
+    Latana's published consumption limit is commercial rather than technical: interviews
+    collected per brand per market per year (25k Essential / 50k Pro / 100k Custom). See
+    plans/latana-plans-pricing.yml. That is a research-sample quota, not an API rate limit.
+evidence:
+- url: https://www.latana.com/pricing
+  status: 200
+- url: https://www.latana.com/developers
+  status: 404
+- url: https://back.latana.com/api-docs
+  status: 401

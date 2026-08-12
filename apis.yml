@@ -10,9 +10,13 @@ description: >-
   is delivered as a dashboard covering brand health tracking, competitor benchmarking,
   purchase funnel tracking and brand strategy planning, sold per market per year across
   Essential, Pro and Custom tiers. Customers include Unilever, Amazon, IKEA, Uber, PVH and
-  Emma Sleep. Latana is backed by Balderton Capital. As of July 2026 Latana publishes no
+  Emma Sleep. Latana is backed by Balderton Capital. As of August 2026 Latana publishes no
   public API, developer portal, SDKs or machine-readable API description; delivery is through
-  the app.latana.com dashboard, dashboard data export and a Latana Slack app.
+  the app.latana.com dashboard, CSV export and a Latana Slack app whose access the Customer
+  Success team provisions on request. A private Rails backend at back.latana.com serves the
+  dashboard over /api/v2 and /api/v3 and mounts an API reference at /api-docs behind HTTP
+  Basic authentication, and an LLM surface at llmagent.latana.com backs the in-product data
+  assistant, but neither is documented, marketed or offered to customers as an API product.
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -32,12 +36,20 @@ x-backed-by:
 - balderton-capital
 x-tier: no-public-api
 x-tier-reason: >-
-  Enriched 2026-07-19. Probed the full developer surface: no api./docs./developer./status./
-  trust. subdomains resolve, no /.well-known/ documents, no /llms.txt, no public OpenAPI,
-  SDK, CLI or Postman collection. Enterprise SaaS delivered via dashboard only.
+  Re-probed 2026-08-12 with a wider host set than the 2026-07-19 round. Still no public
+  developer surface: api./docs./developer./developers./status./trust./security./mcp.
+  subdomains do not resolve, no /.well-known/ document is served on ANY Latana host, no
+  /llms.txt, no OpenAPI, GraphQL SDL, AsyncAPI, MCP server, agent card, SDK, CLI or public
+  Postman collection, and the 59-URL sitemap contains no developer or API page. Three
+  previously unknown Latana hosts were recovered from the app.latana.com JavaScript bundle
+  (back.latana.com, llmagent.latana.com, resources.latana.com) and probed: back.latana.com is
+  the dashboard's private Rails backend and returns HTTP 401 (WWW-Authenticate: Basic) on
+  /api-docs, and its /mcp path is a generic JSON-RPC router that answers -32601 to tools/list,
+  not an MCP server. No contract was reconstructed from private application traffic.
+  Enterprise SaaS delivered via dashboard, CSV export and a CS-provisioned Slack app.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-12'
 tags:
 - Company
 - Brand Tracking
@@ -83,8 +95,37 @@ common:
   url: security/latana-domain-security.yml
 - type: LLMsTxt
   url: llms/latana-llms.txt
+- type: Plans
+  url: plans/latana-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/latana-rate-limits.yml
+- type: Packages
+  url: packages/latana-packages.yml
+- type: Conformance
+  url: conformance/latana-conformance.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Latana ships brand tracking only as an end-user product — a dashboard, a CSV export and a
+    Slack bot the Customer Success team provisions by email — with no developer program of any
+    kind: /developers, /api and /integrations all 404, and the sitemap has no developer page.
+    A private Rails backend does exist at back.latana.com and mounts an API reference at
+    /api-docs, but it is protected by HTTP Basic authentication and is never offered, priced
+    or documented as a customer-facing API, so it is an internal application backend rather
+    than a withheld API product.
+  evidence:
+  - url: https://www.latana.com/developers
+    status: 404
+  - url: https://back.latana.com/api-docs
+    status: 401
+  - url: https://www.latana.com/llms.txt
+    status: 404
+  - url: https://www.latana.com/.well-known/api-catalog
+    status: 404
+  checked: '2026-08-12'
