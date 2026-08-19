@@ -47,7 +47,7 @@ x-tier-reason: >-
   /api-docs, and its /mcp path is a generic JSON-RPC router that answers -32601 to tools/list,
   not an MCP server. No contract was reconstructed from private application traffic.
   Enterprise SaaS delivered via dashboard, CSV export and a CS-provisioned Slack app.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-08-12'
 tags:
