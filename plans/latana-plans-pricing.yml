@@ -76,3 +76,29 @@ api_access:
     No tier lists API access, data-export volume, webhook delivery or developer entitlements.
     The Latana Slack app is provisioned by the Customer Success team on request
     (cs@latana.com) rather than being attached to a tier.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units: []
+  plans:
+  - name: Essential
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Custom
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
