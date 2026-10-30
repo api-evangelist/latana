@@ -1,4 +1,4 @@
-# latana
+# Latana
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-latana is a company surfaced as a portfolio company of balderton-capital and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Latana is a Berlin-based brand tracking and consumer-insights platform that measures brand awareness, brand perception, purchase consideration and ad awareness for global consumer brands. Rather than buying responses from incentivized survey panels, Latana collects non-incentivized micro-surveys through advertising placements to reach everyday consumers, then applies Bayesian modelling and machine-learning quality assurance to project the sample onto real-world populations, including small and hard-to-reach markets. The product is delivered as a dashboard covering brand health tracking, competitor benchmarking, purchase funnel tracking and brand strategy planning, sold per market per year across Essential, Pro and Custom tiers. Customers include Unilever, Amazon, IKEA, Uber, PVH and Emma Sleep. Latana is backed by Balderton Capital. As of August 2026 Latana publishes no public API, developer portal, SDKs or machine-readable API description; delivery is through the app.latana.com dashboard, CSV export and a Latana Slack app whose access the Customer Success team provisions on request. A private Rails backend at back.latana.com serves the dashboard over /api/v2 and /api/v3 and mounts an API reference at /api-docs behind HTTP Basic authentication, and an LLM surface at llmagent.latana.com backs the in-product data assistant, but neither is documented, marketed or offered to customers as an API product.
 
-Backed by: balderton-capital — https://latana.com/
+**Areas:** Company · Brand Tracking · Market Research · Consumer Insights · Brand Awareness · Marketing Analytics · Survey Data · Advertising · Software-as-a-Service
+
+## Latana on APIs.io
+
+Everything profiled for Latana is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/latana/](https://apis.io/providers/latana/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Latana Domain Security](https://apis.io/security/latana/latana-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Latana Plans Pricing](https://apis.io/plans/latana/latana-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Latana Rate Limits](https://apis.io/rate-limits/latana/latana-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.latana.com/)
+- [Pricing](https://www.latana.com/pricing)
+- [Blog](https://www.latana.com/resources)
+- [Terms of service](https://www.latana.com/legal-terms/terms-and-conditions)
+- [Privacy policy](https://www.latana.com/legal-terms/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 22.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 69.7 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/latana/](https://apis.io/providers/latana/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Latana: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/latana/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
